@@ -12,7 +12,7 @@ Vector::~Vector(){
 	for(int i = 0; i < size(); i++){
 		delete vector[i];
 	}
-	delete vector;
+	delete[] vector;
 }
 
 
@@ -27,7 +27,7 @@ void Vector::insert(int index, Planet *p){
 		}
 		temp[index] = p;
 		this->vector = temp;
-		
+
 	}
 	else{
 		vector[index];
@@ -55,4 +55,8 @@ bool Vector::remove(int index){
 	}
 	vector = temp;
 	return true;
+}
+
+unsigned Vector::size(){
+	return sizeof(this->vector)/sizeof(PLanet *);
 }
